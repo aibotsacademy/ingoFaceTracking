@@ -2,17 +2,17 @@
 	var carousel = document.querySelector('.carousel');
 	var background = document.querySelector('#background');
 	var entries = [{
-		handle: 'Chhau Mask',
+		handle: 'Labial Rojo Lux',
 		url: 'https://en.wikipedia.org/wiki/Chhau_mask',
 		entry: './assets/chhau-mask.jpg',
 		background: 'hsl(35, 60%, 50%)'
 	}, {
-		handle: 'Cheriyal Mask',
+		handle: 'Maquillaje Efecto',
 		url: 'https://en.wikipedia.org/wiki/Cheriyal_scroll_painting#The_Tradition',
 		entry: './assets/cherial-woman-mask.jpg',
 		background: 'hsl(0, 40%, 15%)'
 	}, {
-		handle: 'Cheriyal Mask',
+		handle: 'Labial Rosa Amber',
 		url: 'https://en.wikipedia.org/wiki/Cheriyal_scroll_painting#The_Tradition',
 		entry: './assets/cherial-mask.jpg',
 		background: 'hsl(198, 5%, 50%)'
