@@ -36,9 +36,9 @@ class FacePaint {
   }
 
 	_addLights() {
-		const light = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.5);
+		const light = new THREE.HemisphereLight(0xffffff7f, 0xffffff7f, 0.5);
 		this._scene.add(light);
-		const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+		const directionalLight = new THREE.DirectionalLight(0xffffff7f, 0.5);
 		directionalLight.position.set(this._halfW, this._halfH * 0.5, -1000).normalize();
 		this._scene.add(directionalLight);
 	}
@@ -74,7 +74,7 @@ class FacePaint {
 		const beta = 0.5;
 		this._material = new THREE.MeshPhongMaterial({
 			map: texture,
-			color: new THREE.Color(0xffffff),
+			color: new THREE.Color(0xffffff7f),
 			specular: new THREE.Color(beta * 0.2, beta * 0.2, beta * 0.2),
 			reflectivity: beta,
 			shininess: Math.pow(2, alpha * 10),
