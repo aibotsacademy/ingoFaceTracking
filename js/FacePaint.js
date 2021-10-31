@@ -56,10 +56,10 @@ class FacePaint {
     //     TRIANGULATION.splice(i - 2, 3);
     //   }
     // }
-		this._geometry.setIndex(TRIANGULATION);
-		this._geometry.setAttribute('position', new THREE.Float32BufferAttribute(positionBufferData, 3));
-		this._geometry.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
-		this._geometry.computeVertexNormals();
+		
+		
+		
+		
 	}
 
 	_addMaterial() {
