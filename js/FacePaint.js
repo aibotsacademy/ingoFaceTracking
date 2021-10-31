@@ -57,7 +57,10 @@ class FacePaint {
     //   }
     // }
 		
-		
+	this._geometry.setIndex(TRIANGULATION);
+		this._geometry.setAttribute('position', new THREE.Float32BufferAttribute(positionBufferData, 3));
+		this._geometry.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+		this._geometry.computeVertexNormals();	
 		
 		
 	}
@@ -69,7 +72,7 @@ class FacePaint {
 		texture.encoding = THREE.sRGBEncoding;
 
 		// reduce blurring at glancing angles
-		texture.anisotropy = 16;
+		texture.anisotropy = 1;
 		const alpha = 0.4;
 		const beta = 0.5;
 		this._material = new THREE.MeshPhongMaterial({
