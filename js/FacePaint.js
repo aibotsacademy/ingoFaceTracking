@@ -36,9 +36,9 @@ class FacePaint {
   }
 
 	_addLights() {
-		const light = new THREE.HemisphereLight(0xffffff, 0xffffff, 0);
+		const light = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.2);
 		this._scene.add(light);
-		const directionalLight = new THREE.DirectionalLight(0xffffff, 0);
+		const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
 		directionalLight.position.set(this._halfW, this._halfH * 0.5, -1000).normalize();
 		this._scene.add(directionalLight);
 	}
@@ -56,13 +56,10 @@ class FacePaint {
     //     TRIANGULATION.splice(i - 2, 3);
     //   }
     // }
-		
-	this._geometry.setIndex(TRIANGULATION);
+		this._geometry.setIndex(TRIANGULATION);
 		this._geometry.setAttribute('position', new THREE.Float32BufferAttribute(positionBufferData, 3));
 		this._geometry.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
-		this._geometry.computeVertexNormals();	
-		
-		
+		this._geometry.computeVertexNormals();
 	}
 
 	_addMaterial() {
@@ -72,7 +69,7 @@ class FacePaint {
 		texture.encoding = THREE.sRGBEncoding;
 
 		// reduce blurring at glancing angles
-		texture.anisotropy = 10;
+		texture.anisotropy = 16;
 		const alpha = 0.4;
 		const beta = 0.5;
 		this._material = new THREE.MeshPhongMaterial({
